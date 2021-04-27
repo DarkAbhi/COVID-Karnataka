@@ -1,8 +1,41 @@
 <resources>
     <string name="app_name">COVID Karnataka</string>
+
     <string name="home_title">COVID-19 Karnataka</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="recent_news_header">Recent News</string>
     <string name="symptoms">Symptoms</string>
+
+    <string name="home">Home</string>
+    <string name="news">News</string>
+    <string name="info">Info</string>
+
+    <string name="confirmed">Confirmed: %d</string>
+    <string name="active">Active: %d</string>
+    <string name="recovered">Recovered: %d</string>
+    <string name="deceased">Deceased: %d</string>
+
+    <string name="confirmed_cases">Confirmed cases: %s</string>
+    <string name="active_cases">Active cases: %s</string>
+    <string name="recovered_cases">Recovered cases: %s</string>
+    <string name="deceased_cases">Deceased cases: %s</string>
+
+    <string name="prevention">Prevention</string>
+    <string name="helpline_numbers">Helpline Numbers</string>
+    <string name="high_fever">High Fever</string>
+    <string name="cough">Cough</string>
+    <string name="sore_throat">Sore Throat</string>
+    <string name="wash_your_nhands_often">Wash your\nhands often</string>
+    <string name="wear_a_face_nmask">Wear a face\nmask</string>
+    <string name="avoid_contact_nwith_sick_people">Avoid contact\nwith sick people</string>
+    <string name="always_cover_your_ncough_or_sneeze">Always Cover Your\nCough Or Sneeze</string>
+    <string name="karnataka">Karnataka</string>
+    <string name="_104_080_46848600_1075">104/ 080–46848600 / 1075</string>
+    <string name="andhra_pradesh">Andhra Pradesh</string>
+    <string name="_0866_2410978">0866–2410978</string>
+    <string name="tamil_nadu">Tamil Nadu</string>
+    <string name="_044_29510500_25615025">044–29510500, 25615025</string>
+    <string name="kerala">Kerala</string>
+    <string name="_0471_2552056_25521056">0471–2552056, 25521056</string>
+
 </resources>

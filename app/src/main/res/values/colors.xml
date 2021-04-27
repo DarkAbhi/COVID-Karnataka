@@ -3,4 +3,9 @@
     <color name="colorPrimary">#455781</color>
     <color name="colorPrimaryDark">#1A2744</color>
     <color name="colorAccent">#7CA7DC</color>
+
+    <color name="nav_bar_inactive_color">@android:color/darker_gray</color>
+    <color name="text_color">#000000</color>
+    <color name="districtCardTextColor">#000000</color>
+
 </resources>
