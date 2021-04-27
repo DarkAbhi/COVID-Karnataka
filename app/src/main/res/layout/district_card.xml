@@ -1,58 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    android:backgroundTint="@android:color/white"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="4dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <data>
+
+        <variable
+            name="district"
+            type="com.darkabhi.covidproject.models.DistrictData" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_margin="4dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_margin="8dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/districtLocation"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:drawableStart="@drawable/ic_location_black"
-            android:drawablePadding="4dp" />
+            android:layout_margin="4dp"
+            android:orientation="vertical">
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/districtConfirmed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:drawableStart="@drawable/ic_alert_black"
-            android:drawablePadding="4dp" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/district_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:drawableStart="@drawable/ic_location"
+                android:drawablePadding="4dp"
+                android:drawableTint="@color/text_color"
+                android:text="@{district.district}"
+                android:textColor="@color/districtCardTextColor" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/districtActive"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:drawableStart="@drawable/ic_megaphone_black"
-            android:drawablePadding="4dp" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/district_confirmed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:drawableStart="@drawable/ic_warning"
+                android:drawablePadding="4dp"
+                android:drawableTint="@color/text_color"
+                android:text="@{@string/confirmed(district.confirmed)}"
+                android:textColor="@color/districtCardTextColor" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/districtRecovered"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:drawableStart="@drawable/ic_heart_black"
-            android:drawablePadding="4dp" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/district_active"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:drawableStart="@drawable/ic_active"
+                android:drawablePadding="4dp"
+                android:drawableTint="@color/text_color"
+                android:text="@{@string/active(district.active)}"
+                android:textColor="@color/districtCardTextColor" />
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/districtDeceased"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:drawableStart="@drawable/ic_papyrus_black"
-            android:drawablePadding="4dp" />
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/district_recovered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:drawableStart="@drawable/ic_recovered"
+                android:drawablePadding="4dp"
+                android:drawableTint="@color/text_color"
+                android:text="@{@string/recovered(district.recovered)}"
+                android:textColor="@color/districtCardTextColor" />
 
-    </LinearLayout>
-</com.google.android.material.card.MaterialCardView>
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/district_deceased"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:drawableStart="@drawable/ic_deceased"
+                android:drawablePadding="4dp"
+                android:drawableTint="@color/text_color"
+                android:text="@{@string/deceased(district.deceased)}"
+                android:textColor="@color/districtCardTextColor" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

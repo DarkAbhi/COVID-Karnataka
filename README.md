@@ -6,33 +6,31 @@ Made with ❤ in India
 An android app to track the COVID cases in Karnataka.
 
 Features:
-- Live Covid-19 cases in Karnataka with district data
+- Covid-19 cases in Karnataka with district data
 - Material design UI and simple UX
-- Live news related to Corona Virus from newsapi.org
+- Recent news related to Corona Virus from newsapi.org
 - List of helpline numbers
 
 ![COVID-19 Karnataka Screenshots](https://github.com/DarkAbhi/COVID-Karnataka/blob/master/images/banner.png)
 # Setup 
 - Register on [NewsApi.org](https://newsapi.org)
 - Get APIKeys from [NewsApi.org](https://newsapi.org)
-- Paste your APIKeys in NewsFragment.java
-```
-private static final String NEWSAPIKEY = "API_KEY";
-```
+
 
 # TODO
 - Display graphs of daily cases
 - Improve home UI
-- Rewrite in Kotlin
+- Enable user to select state
 
 # Resourses
-- Design take from [Dribble Design](https://dribbble.com/shots/11164123-Daily-UI-Challenge-043-100-Coronavirus-Mobile-App-Freebie) By Ankur Tripathi
+- Design take from [Dribbble Design](https://dribbble.com/shots/11164123-Daily-UI-Challenge-043-100-Coronavirus-Mobile-App-Freebie) By Ankur Tripathi
 
 
 # Contribution
 - You are welcome to contribute to this project, which will also help me learn new concepts. Thank you!
 
 # Author 
+- [My site](https://darkabhi.github.io)
 - [Facebook](https://www.facebook.com/iliketomoveitmoveitmoveitt/)
 - [Twitter](https://twitter.com/im_abhishekan)
 - [Stackoverflow](https://stackoverflow.com/users/7741377/abhishek-an)
