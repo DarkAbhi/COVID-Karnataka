@@ -8,18 +8,20 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.darkabhi.covidproject.R
 import com.darkabhi.covidproject.databinding.FragmentNewsBinding
 import com.darkabhi.covidproject.models.State
+import com.darkabhi.covidproject.ui.activity.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
 @AndroidEntryPoint
 class NewsFragment : Fragment() {
     private lateinit var binding: FragmentNewsBinding
-    private val viewModel by viewModels<NewsViewModel>()
+    private val viewModel by activityViewModels<MainViewModel>()
     private lateinit var mAdapter: NewsAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {

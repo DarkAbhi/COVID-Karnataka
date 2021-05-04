@@ -8,11 +8,13 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.darkabhi.covidproject.R
 import com.darkabhi.covidproject.databinding.FragmentHomeBinding
 import com.darkabhi.covidproject.models.State
+import com.darkabhi.covidproject.ui.activity.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import timber.log.Timber
 
@@ -20,7 +22,7 @@ import timber.log.Timber
 @AndroidEntryPoint
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
-    private val viewModel by viewModels<HomeFragmentViewModel>()
+    private val viewModel by activityViewModels<MainViewModel>()
     private lateinit var mAdapter: DistrictAdapter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {

@@ -8,7 +8,7 @@
 
         <variable
             name="vm"
-            type="com.darkabhi.covidproject.ui.fragment.news.NewsViewModel" />
+            type="com.darkabhi.covidproject.ui.activity.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
