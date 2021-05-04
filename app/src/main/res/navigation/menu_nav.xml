@@ -6,18 +6,69 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
+        android:id="@+id/covidResourcesFragment"
+        android:name="com.darkabhi.covidproject.ui.fragment.covidresources.dashboard.CovidResourcesFragment"
+        android:label="COVID Resource"
+        tools:layout="@layout/covid_resources_fragment">
+
+        <action
+            android:id="@+id/resourceToAmbulanceFragment"
+            app:destination="@id/ambulanceFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+
+    </fragment>
+
+    <fragment
         android:id="@+id/homeFragment"
-        android:name="com.darkabhi.covidproject.ui.fragment.HomeFragment"
-        android:label="Homme"
+        android:name="com.darkabhi.covidproject.ui.fragment.home.HomeFragment"
+        android:label="COVID Karnataka"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/newsFragment"
-        android:name="com.darkabhi.covidproject.ui.fragment.NewsFragment"
+        android:name="com.darkabhi.covidproject.ui.fragment.news.NewsFragment"
         android:label="News"
         tools:layout="@layout/fragment_news" />
     <fragment
         android:id="@+id/infoFragment"
-        android:name="com.darkabhi.covidproject.ui.fragment.InfoFragment"
+        android:name="com.darkabhi.covidproject.ui.fragment.info.InfoFragment"
         android:label="Info"
-        tools:layout="@layout/fragment_info" />
+        tools:layout="@layout/fragment_info" >
+        <action
+            android:id="@+id/action_infoFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_infoFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ambulanceFragment"
+        android:name="com.darkabhi.covidproject.ui.fragment.covidresources.providers.ProvidersFragment"
+        tools:layout="@layout/providers_fragment">
+
+        <action
+            android:id="@+id/ambulanceToEditAmbulance"
+            app:destination="@id/editDetailsFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/editDetailsFragment"
+        android:name="com.darkabhi.covidproject.ui.fragment.covidresources.details.DetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/details_fragment" />
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.darkabhi.covidproject.ui.fragment.info.about.AboutFragment"
+        android:label="@string/about"
+        tools:layout="@layout/fragment_about"/>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.darkabhi.covidproject.ui.fragment.info.settings.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings"/>
+
 </navigation>

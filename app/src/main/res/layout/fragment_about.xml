@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".ui.fragment.info.about.AboutFragment">
+
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Karnataka COVID Resources"
+        android:textColor="@color/text_color"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Karnataka COVID Resources" />
+
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@id/initiative_by"
+        app:layout_constraintTop_toBottomOf="@id/heading" />
+
+    <TextView
+        android:id="@+id/initiative_by"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Disclaimer:\nImage resources have been taken from flat icon."
+        android:textColor="@color/text_color"
+        app:layout_constraintTop_toBottomOf="@id/line_1" />
+
+    <TextView
+        android:id="@+id/built_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Built By"
+        android:textSize="16sp"
+        android:textColor="@color/text_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/initiative_by" />
+
+    <RelativeLayout
+        android:id="@+id/go_to_kendrick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/built_heading">
+
+        <TextView
+            android:id="@+id/social_handle_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Twitter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/social_handle_1"
+            android:text="Kendrick Gomez"
+            android:textColor="@color/text_color" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/twitter" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/go_to_eujin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/go_to_kendrick">
+
+        <TextView
+            android:id="@+id/social_handle_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Twitter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/social_handle_2"
+            android:text="Eujin Joseph George"
+            android:textColor="@color/text_color" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/twitter" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/go_to_abhi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/go_to_eujin">
+
+        <TextView
+            android:id="@+id/social_handle_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Github" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/social_handle_3"
+            android:text="Abhishek AN"
+            android:textColor="@color/text_color" />
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/github" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

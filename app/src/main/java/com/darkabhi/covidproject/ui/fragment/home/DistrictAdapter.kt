@@ -1,4 +1,4 @@
-package com.darkabhi.covidproject.ui.adapter
+package com.darkabhi.covidproject.ui.fragment.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -64,8 +64,6 @@ data class Statewise(
 
 @JsonClass(generateAdapter = true)
 data class Tested(
-        @Json(name = "aefi")
-        val aefi: String,
         @Json(name = "dailyrtpcrsamplescollectedicmrapplication")
         val dailyrtpcrsamplescollectedicmrapplication: String,
         @Json(name = "firstdoseadministered")

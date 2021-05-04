@@ -1,14 +1,17 @@
 package com.darkabhi.covidproject.di
 
+import android.content.Context
 import com.darkabhi.covidproject.app.AppConfig
 import com.darkabhi.covidproject.data.network.repository.AppRepository
 import com.darkabhi.covidproject.data.network.service.CovidApiService
 import com.darkabhi.covidproject.data.network.service.NewsApiService
+import com.darkabhi.covidproject.data.preferences.DataStoreRepository
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -50,5 +53,9 @@ object AppModule {
                 .build()
                 .create(NewsApiService::class.java)
     }
+
+    @Provides
+    @Singleton
+    fun provideDataStoreRepository(@ApplicationContext appContext: Context) = DataStoreRepository(appContext)
 
 }

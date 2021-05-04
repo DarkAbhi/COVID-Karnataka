@@ -8,7 +8,7 @@
 
         <variable
             name="vm"
-            type="com.darkabhi.covidproject.viewmodel.NewsViewModel" />
+            type="com.darkabhi.covidproject.ui.fragment.news.NewsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,24 +17,12 @@
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/materialTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="24dp"
-                    android:fontFamily="@font/montserrat"
-                    android:text="@string/recent_news_header"
-                    android:textColor="@color/text_color"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/news_recycler_view"
@@ -42,7 +30,6 @@
                     android:layout_height="match_parent"
                     android:overScrollMode="never"
                     app:hideOnLoading="@{ vm.newsResponse }"
-                    app:layout_constraintTop_toBottomOf="@+id/materialTextView"
                     tools:listitem="@layout/news_card" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

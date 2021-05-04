@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="details"
+            type="com.darkabhi.covidproject.models.DetailsDataModel" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:clipChildren="false"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:clipChildren="false">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/verify_status_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="@android:color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:verifiedChipText="@{details.verified}"
+                app:verifiedColor="@{details.verified}"
+                tools:text="Verified" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/available_status_chip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="@android:color/white"
+                app:availableChipText="@{details.available}"
+                app:availableColor="@{details.available}"
+                app:layout_constraintStart_toEndOf="@id/verify_status_chip"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Verified" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@{details.name}"
+                android:textColor="@color/text_color"
+                app:layout_constraintEnd_toStartOf="@+id/phone_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/verify_status_chip"
+                tools:text="Manipal Hospital" />
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@{details.more_numbers}"
+                android:textColor="@color/text_color"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/phone_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/name"
+                tools:text="08026710777" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@{details.description}"
+                android:textColor="@color/text_color"
+                app:layout_constraintEnd_toStartOf="@+id/phone_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/number"
+                tools:text="Providing Ambulances to the needy." />
+
+            <ImageButton
+                android:id="@+id/phone_button"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/button_background_shadow"
+                android:backgroundTint="@android:color/white"
+                android:layout_marginEnd="4dp"
+                android:elevation="4dp"
+                android:src="@drawable/ic_phone"
+                app:layout_constraintBottom_toBottomOf="@+id/description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/verify_status_chip" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@android:color/darker_gray"
+                app:layout_constraintTop_toBottomOf="@id/description"
+                app:setLastUpdatedTime="@{details.last_update_time}"
+                tools:text="Last updated: 2 April 1:02 PM" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

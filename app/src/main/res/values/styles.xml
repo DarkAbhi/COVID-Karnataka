@@ -7,4 +7,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ToolbarBarTextAppearance" parent="android:TextAppearance">
+        <item name="android:fontFamily">@font/montserrat</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
 </resources>

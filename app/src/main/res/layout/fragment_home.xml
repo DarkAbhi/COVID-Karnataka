@@ -12,7 +12,7 @@
 
         <variable
             name="vm"
-            type="com.darkabhi.covidproject.viewmodel.HomeFragmentViewModel" />
+            type="com.darkabhi.covidproject.ui.fragment.home.HomeFragmentViewModel" />
 
     </data>
 
@@ -26,69 +26,140 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
+                app:hideOnLoading="@{ vm.indiaResponse }"
                 android:layout_height="match_parent">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/covid_state_heading"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="4dp"
-                    android:fontFamily="@font/montserrat"
-                    android:text="@string/home_title"
-                    android:textColor="@color/text_color"
-                    android:textSize="24sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
                 <LinearLayout
                     android:id="@+id/cases_layout"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    app:hideOnLoading="@{ vm.indiaResponse }"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/covid_state_heading">
+                    android:weightSum="3"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/confirmed"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/confirmed_card"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="12dp"
                         android:layout_weight="1"
-                        android:background="@drawable/red_circle"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:gravity="center"
-                        android:text="@{@string/confirmed_cases(state.confirmed)}"
-                        android:textColor="#B51414" />
+                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="#9059FF"
+                        app:cardCornerRadius="16dp">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/recovered"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/green_circle"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:gravity="center"
-                        android:text="@{@string/recovered_cases(state.recovered)}"
-                        android:textColor="#20882A" />
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-                    <com.google.android.material.textview.MaterialTextView
-                        android:id="@+id/deceased"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:textStyle="bold"
+                                android:text="@string/confirmed_caps"
+                                android:textColor="@android:color/white"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:textSize="20sp"
+                                android:text="@{state.confirmed}"
+                                android:textColor="@android:color/white"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:text="300000" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/recovered_card"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="12dp"
                         android:layout_weight="1"
-                        android:background="@drawable/blue_circle"
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:gravity="center"
-                        android:text="@{@string/deceased_cases(state.deaths)}"
-                        android:textColor="#0B4565" />
+                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="#4CD97B"
+                        app:cardCornerRadius="16dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:textStyle="bold"
+                                android:text="@string/recovered_caps"
+                                android:textColor="@android:color/white"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:textSize="20sp"
+                                android:text="@{state.recovered}"
+                                android:textColor="@android:color/white"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:text="300000" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/deceased_card"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="12dp"
+                        app:cardElevation="8dp"
+                        android:layout_weight="1"
+                        app:cardBackgroundColor="#FF2E63"
+                        app:cardCornerRadius="16dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/deceased_caps"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/white"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:textSize="20sp"
+                                android:text="@{state.deaths}"
+                                android:textColor="@android:color/white"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                tools:text="300000" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
                 </LinearLayout>
 
                 <LinearLayout

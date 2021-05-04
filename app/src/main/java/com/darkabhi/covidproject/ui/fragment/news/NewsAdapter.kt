@@ -1,4 +1,4 @@
-package com.darkabhi.covidproject.ui.adapter
+package com.darkabhi.covidproject.ui.fragment.news
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.darkabhi.covidproject.R
 import com.darkabhi.covidproject.databinding.NewsCardBinding
 import com.darkabhi.covidproject.models.Article
-import com.darkabhi.covidproject.ui.adapter.NewsAdapter.NewsHolder
+import com.darkabhi.covidproject.ui.fragment.news.NewsAdapter.NewsHolder
 
 class NewsAdapter : RecyclerView.Adapter<NewsHolder>() {
 

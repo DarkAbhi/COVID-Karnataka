@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#455781</color>
+    <color name="colorPrimary">#3977E3</color>
     <color name="colorPrimaryDark">#1A2744</color>
     <color name="colorAccent">#7CA7DC</color>
 
     <color name="nav_bar_inactive_color">@android:color/darker_gray</color>
     <color name="text_color">#000000</color>
     <color name="districtCardTextColor">#000000</color>
+
+    <color name="verified_chip_bg">	#228B22</color>
+    <color name="not_verified_chip_bg">#FF0000</color>
+    <color name="to_be_verified_chip_bg">#fada5f</color>
+
+    <color name="available_chip_bg">#3977E3</color>
 
 </resources>

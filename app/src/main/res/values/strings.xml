@@ -15,10 +15,17 @@
     <string name="recovered">Recovered: %d</string>
     <string name="deceased">Deceased: %d</string>
 
-    <string name="confirmed_cases">Confirmed cases: %s</string>
+    <string name="confirmed_caps">CONFIRMED</string>
     <string name="active_cases">Active cases: %s</string>
-    <string name="recovered_cases">Recovered cases: %s</string>
-    <string name="deceased_cases">Deceased cases: %s</string>
+    <string name="recovered_caps">RECOVERED</string>
+    <string name="deceased_caps">DECEASED</string>
+
+    <string name="verified">Verified</string>
+    <string name="not_verified">Not Verified</string>
+    <string name="to_be_verified">To Be Verified</string>
+
+    <string name="available">Available</string>
+    <string name="not_available">Not Available</string>
 
     <string name="prevention">Prevention</string>
     <string name="helpline_numbers">Helpline Numbers</string>
@@ -37,5 +44,16 @@
     <string name="_044_29510500_25615025">044–29510500, 25615025</string>
     <string name="kerala">Kerala</string>
     <string name="_0471_2552056_25521056">0471–2552056, 25521056</string>
+    <string name="covid_resources">Resources</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="about">About</string>
+    <string name="settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logout">Logout</string>
+    <string name="sign_in">Sign In</string>
+    <string name="name">Name</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
 
 </resources>

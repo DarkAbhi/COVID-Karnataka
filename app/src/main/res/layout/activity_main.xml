@@ -7,28 +7,52 @@
 
     </data>
 
-    <RelativeLayout
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.activity.MainActivity">
+        android:fitsSystemWindows="true">
 
-        <fragment
-            android:id="@+id/fragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@+id/navigation_view"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/menu_nav" />
+            tools:context=".ui.activity.MainActivity">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/navigation_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            app:itemIconTint="@color/bottom_nav_color_selector"
-            app:itemTextColor="@color/bottom_nav_color_selector"
-            app:menu="@menu/botttom_menu" />
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/app_toolbar"
+                android:layout_width="match_parent"
+                app:titleTextAppearance="@style/ToolbarBarTextAppearance"
+                android:layout_alignParentTop="true"
+                android:layout_height="wrap_content" />
 
-    </RelativeLayout>
+            <fragment
+                android:id="@+id/fragment"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/navigation_view"
+                android:layout_below="@id/app_toolbar"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/menu_nav" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/navigation_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                app:itemIconTint="@color/bottom_nav_color_selector"
+                app:itemTextColor="@color/bottom_nav_color_selector"
+                app:menu="@menu/botttom_menu" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/drawer_nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:menu="@menu/drawer_menu" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
 </layout>

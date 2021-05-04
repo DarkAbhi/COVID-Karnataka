@@ -1,4 +1,4 @@
-package com.darkabhi.covidproject.viewmodel
+package com.darkabhi.covidproject.ui.fragment.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
