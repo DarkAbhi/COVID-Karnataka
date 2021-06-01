@@ -10,7 +10,11 @@ import androidx.core.content.ContextCompat
  */
 object PermissionUtils {
     fun Context.checkPhonePermission(): Boolean {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CALL_PHONE
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
             return true
         }
         return false

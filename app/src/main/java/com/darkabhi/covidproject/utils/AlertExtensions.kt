@@ -12,41 +12,41 @@ import com.google.android.material.snackbar.Snackbar
 
 // Show positive and negative options alert dialog
 fun Context.showDoubleOptionAlertDialog(
-        positiveButtonLabel: String,
-        negativeButtonLabel: String,
-        title: String,
-        message: String,
-        actionOnPositiveButton: () -> Unit
+    positiveButtonLabel: String,
+    negativeButtonLabel: String,
+    title: String,
+    message: String,
+    actionOnPositiveButton: () -> Unit
 ) {
     val builder = AlertDialog.Builder(this)
-            .setTitle(title)
-            .setMessage(message)
-            .setCancelable(false)
-            .setPositiveButton(positiveButtonLabel) { dialog, _ ->
-                dialog.cancel()
-                actionOnPositiveButton()
-            }.setNegativeButton(negativeButtonLabel) { dialog, _ ->
-                dialog.cancel()
-            }
+        .setTitle(title)
+        .setMessage(message)
+        .setCancelable(false)
+        .setPositiveButton(positiveButtonLabel) { dialog, _ ->
+            dialog.cancel()
+            actionOnPositiveButton()
+        }.setNegativeButton(negativeButtonLabel) { dialog, _ ->
+            dialog.cancel()
+        }
     val alert = builder.create()
     alert.show()
 }
 
 // Show alert dialog
 fun Context.showAlertDialog(
-        positiveButtonLabel: String,
-        title: String,
-        message: String,
-        actionOnPositiveButton: () -> Unit
+    positiveButtonLabel: String,
+    title: String,
+    message: String,
+    actionOnPositiveButton: () -> Unit
 ) {
     val builder = AlertDialog.Builder(this)
-            .setTitle(title)
-            .setMessage(message)
-            .setCancelable(false)
-            .setPositiveButton(positiveButtonLabel) { dialog, _ ->
-                dialog.cancel()
-                actionOnPositiveButton()
-            }
+        .setTitle(title)
+        .setMessage(message)
+        .setCancelable(false)
+        .setPositiveButton(positiveButtonLabel) { dialog, _ ->
+            dialog.cancel()
+            actionOnPositiveButton()
+        }
     val alert = builder.create()
     alert.show()
 }
@@ -70,11 +70,12 @@ fun View.showLongSnackBar(message: String) {
 }
 
 fun View.snackBarWithAction(
-        message: String, actionLabel: String,
-        block: () -> Unit
+    message: String,
+    actionLabel: String,
+    block: () -> Unit
 ) {
     Snackbar.make(this, message, Snackbar.LENGTH_LONG)
-            .setAction(actionLabel) {
-                block()
-            }
+        .setAction(actionLabel) {
+            block()
+        }
 }

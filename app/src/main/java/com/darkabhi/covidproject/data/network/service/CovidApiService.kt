@@ -2,7 +2,6 @@ package com.darkabhi.covidproject.data.network.service
 
 import com.darkabhi.covidproject.models.CovidIndiaModel
 import com.darkabhi.covidproject.models.CovidStateModelItem
-import retrofit2.Response
 import retrofit2.http.GET
 
 /**
@@ -11,8 +10,8 @@ import retrofit2.http.GET
 interface CovidApiService {
 
     @GET("data.json")
-    suspend fun getIndiaData(): Response<CovidIndiaModel>
+    suspend fun getIndiaData(): CovidIndiaModel
 
     @GET("v2/state_district_wise.json")
-    suspend fun getStateDistrictData(): Response<List<CovidStateModelItem>>
+    suspend fun getStateDistrictData(): List<CovidStateModelItem>
 }

@@ -1,7 +1,9 @@
 package com.darkabhi.covidproject.app
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
 import com.darkabhi.covidproject.BuildConfig
+import com.darkabhi.covidproject.app.preferences.Manager
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
@@ -13,5 +15,13 @@ class CovidApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         if (BuildConfig.DEBUG) Timber.plant(Timber.DebugTree())
+        if (Manager(this).isDarkTheme())
+            AppCompatDelegate.setDefaultNightMode(
+                AppCompatDelegate.MODE_NIGHT_YES
+            )
+        else
+            AppCompatDelegate.setDefaultNightMode(
+                AppCompatDelegate.MODE_NIGHT_NO
+            )
     }
 }

@@ -7,7 +7,7 @@
 
         <variable
             name="details"
-            type="com.darkabhi.covidproject.models.DetailsDataModel" />
+            type="com.darkabhi.covidproject.models.ResourceData" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
@@ -62,13 +62,13 @@
 
             <TextView
                 android:id="@+id/number"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:text="@{details.more_numbers}"
+                android:text="@{details.contactNumber}"
                 android:textColor="@color/text_color"
+                android:textIsSelectable="true"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toStartOf="@+id/phone_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name"
                 tools:text="08026710777" />
@@ -89,9 +89,8 @@
                 android:id="@+id/phone_button"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:background="@drawable/button_background_shadow"
-                android:backgroundTint="@android:color/white"
                 android:layout_marginEnd="4dp"
+                android:background="@drawable/button_background_shadow"
                 android:elevation="4dp"
                 android:src="@drawable/ic_phone"
                 app:layout_constraintBottom_toBottomOf="@+id/description"
@@ -103,10 +102,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="4dp"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:textColor="@android:color/darker_gray"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/description"
-                app:setLastUpdatedTime="@{details.last_update_time}"
+                app:setLastUpdatedTime="@{details.lastUpdateTime}"
                 tools:text="Last updated: 2 April 1:02 PM" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

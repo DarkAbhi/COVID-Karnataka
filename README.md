@@ -3,13 +3,13 @@
 
 Made with ❤ in India 
 
-An android app to track the COVID cases in Karnataka.
+An android app to track the COVID cases and view COVID resources in Karnataka.
 
 Features:
 - Covid-19 cases in Karnataka with district data
 - Material design UI and simple UX
 - Recent news related to Corona Virus from newsapi.org
-- List of helpline numbers
+- COVID Resources verified by volunteers at [Team LBTC](https://letsbethechange.in/)
 
 ![COVID-19 Karnataka Screenshots](https://github.com/DarkAbhi/COVID-Karnataka/blob/master/images/banner.png)
 # Setup 
@@ -19,12 +19,14 @@ Features:
 
 # TODO
 - Display graphs of daily cases
-- Improve home UI
 - Enable user to select state
 
 # Resourses
 - Design taken from [Dribbble Design](https://dribbble.com/shots/11164123-Daily-UI-Challenge-043-100-Coronavirus-Mobile-App-Freebie) By Ankur Tripathi
 
+# Disclaimer
+
+Information on this app is verified by group of citizen volunteers. Please use the information at your own discretion.
 
 # Contribution
 - You are welcome to contribute to this project, which will also help me learn new concepts. Thank you!

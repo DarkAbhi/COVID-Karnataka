@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "217662271576",
+    "firebase_url": "https://wecare-c6a3e.firebaseio.com",
+    "project_id": "wecare-c6a3e",
+    "storage_bucket": "wecare-c6a3e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217662271576:android:77bcef873bb83880395a2d",
+        "android_client_info": {
+          "package_name": "com.darkabhi.covidproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217662271576-tko8jol2dp820sfict9vkki3703r1c3l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.darkabhi.covidproject",
+            "certificate_hash": "32687916e442541ae27ced451d0eaafde006ee07"
+          }
+        },
+        {
+          "client_id": "217662271576-slf721lfc10bcllq3pd3ucfil8ik2k66.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrmmx6ahPjPhFOANjWEpBDV0F08N7gFxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217662271576-slf721lfc10bcllq3pd3ucfil8ik2k66.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

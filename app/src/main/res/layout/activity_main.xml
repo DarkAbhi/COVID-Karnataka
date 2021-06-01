@@ -13,38 +13,48 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
 
-        <RelativeLayout
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context=".ui.activity.MainActivity">
+            android:layout_height="wrap_content">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/app_toolbar"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                app:titleTextAppearance="@style/ToolbarBarTextAppearance"
-                android:layout_alignParentTop="true"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                app:layout_anchor="@id/navigation_view"
+                tools:context=".home.HomeActivity">
 
-            <fragment
-                android:id="@+id/fragment"
-                android:name="androidx.navigation.fragment.NavHostFragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@+id/navigation_view"
-                android:layout_below="@id/app_toolbar"
-                app:defaultNavHost="true"
-                app:navGraph="@navigation/menu_nav" />
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:id="@+id/app_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    app:titleTextAppearance="@style/ToolbarBarTextAppearance" />
+
+                <fragment
+                    android:id="@+id/fragment"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/app_toolbar"
+                    app:defaultNavHost="true"
+                    app:navGraph="@navigation/menu_nav" />
+
+            </RelativeLayout>
 
             <com.google.android.material.bottomnavigation.BottomNavigationView
                 android:id="@+id/navigation_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
                 app:itemIconTint="@color/bottom_nav_color_selector"
                 app:itemTextColor="@color/bottom_nav_color_selector"
+                app:labelVisibilityMode="labeled"
+                app:layout_behavior="com.darkabhi.covidproject.utils.ui.BottomNavigationBehavior"
                 app:menu="@menu/botttom_menu" />
 
-        </RelativeLayout>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/drawer_nav_view"
