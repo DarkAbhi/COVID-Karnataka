@@ -22,11 +22,11 @@ import com.darkabhi.covidproject.databinding.ProvidersFragmentBinding
 import com.darkabhi.covidproject.models.DashboardItemModel
 import com.darkabhi.covidproject.utils.PermissionUtils.checkPhonePermission
 import com.darkabhi.covidproject.utils.showShortSnackBar
-import com.darkabhi.covidproject.utils.showShortToast
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @AndroidEntryPoint
 class ProvidersFragment : Fragment() {
@@ -104,7 +104,7 @@ class ProvidersFragment : Fragment() {
                     else -> null
                 }
                 errorState?.let {
-                    requireContext().showShortToast(it.error.message!!)
+                    Timber.e(it.error.message!!)
                 }
             }
         }
