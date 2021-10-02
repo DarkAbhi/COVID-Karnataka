@@ -5,8 +5,8 @@ import androidx.paging.PagingState
 import com.darkabhi.covidproject.app.AppConfig
 import com.darkabhi.covidproject.data.network.repository.ResourcesRepository
 import com.darkabhi.covidproject.models.ResourceData
-import okhttp3.MediaType
-import okhttp3.ResponseBody
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.ResponseBody.Companion.toResponseBody
 import retrofit2.HttpException
 import retrofit2.Response
 import java.io.IOException
@@ -44,7 +44,7 @@ class ResourcesDataSource(
                 AppConfig.TELE_COLLECTION -> resourcesRepository.getTeleData(
                     pageNo = pageIndex.toString()
                 )
-                else -> Response.error(400, ResponseBody.create(MediaType.parse(""), ""))
+                else -> Response.error(400, "".toResponseBody("".toMediaTypeOrNull()))
             }
             val result = response.body()
             val nextKey =

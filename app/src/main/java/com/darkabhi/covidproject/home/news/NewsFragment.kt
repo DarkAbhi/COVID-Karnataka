@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -17,6 +18,7 @@ import com.darkabhi.covidproject.models.State
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import timber.log.Timber
+import www.sanju.motiontoast.MotionToast
 
 @Suppress("UNCHECKED_CAST")
 @AndroidEntryPoint
@@ -46,7 +48,18 @@ class NewsFragment : Fragment() {
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.newsResponse.collectLatest {
                 when (it) {
-                    is State.Failed -> Timber.e(it.message)
+                    is State.Failed -> {
+                        Timber.e(it.message)
+                        binding.newsPb.visibility = View.GONE
+                        MotionToast.darkToast(
+                            requireActivity(), "Failed ☹",
+                            "An error occurred while fetching latest news.",
+                            MotionToast.TOAST_ERROR,
+                            MotionToast.GRAVITY_BOTTOM,
+                            MotionToast.LONG_DURATION,
+                            ResourcesCompat.getFont(requireContext(), R.font.helvetica_regular)
+                        )
+                    }
                     is State.Loading -> {
                         binding.newsRecyclerView.visibility = View.GONE
                         binding.newsPb.visibility = View.VISIBLE

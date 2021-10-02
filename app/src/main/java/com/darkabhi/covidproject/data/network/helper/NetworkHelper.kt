@@ -20,6 +20,7 @@ suspend fun <T> safeApiCall(
         try {
             ResultWrapper.Success(apiCall.invoke())
         } catch (throwable: Throwable) {
+            Timber.e(throwable)
             when (throwable) {
                 is IOException -> ResultWrapper.NetworkError
                 is HttpException -> {
@@ -43,6 +44,7 @@ private fun convertErrorBody(throwable: HttpException): ErrorResponse? {
             moshiAdapter.fromJson(it)
         }
     } catch (exception: Exception) {
+        Timber.e(exception)
         null
     }
 }

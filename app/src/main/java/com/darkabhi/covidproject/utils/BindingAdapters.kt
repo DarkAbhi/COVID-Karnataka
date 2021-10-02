@@ -10,6 +10,7 @@ import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+
 /**
  * Created by Abhishek AN <abhishek@iku.earth> on 4/27/2021.
  */
@@ -18,6 +19,9 @@ import java.util.Locale
 fun setPostImage(postImageView: ImageView?, url: String?) {
     postImageView?.load(url) {
         crossfade(true)
+        crossfade(500)
+        error(R.drawable.placeholder)
+        placeholder(R.drawable.placeholder)
     }
 }
 

@@ -5,7 +5,7 @@ package com.darkabhi.covidproject.app
  */
 object AppConfig {
 
-    const val COVID_BASE_URL = "https://api.covid19india.org/"
+    const val COVID_BASE_URL = "https://data.covid19india.org/"
     const val NEWS_BASE_URL = "https://newsapi.org/"
     const val RELIEF_URL = "https://covid-relief-backend-karnataka.herokuapp.com/"
 

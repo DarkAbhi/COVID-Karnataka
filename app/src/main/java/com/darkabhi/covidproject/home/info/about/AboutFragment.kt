@@ -55,6 +55,12 @@ class AboutFragment : Fragment() {
                 Uri.parse("https://github.com/DarkAbhi/COVID-Karnataka")
             )
         }
+        binding.goToWebsite.setOnClickListener {
+            customTabsIntent.launchUrl(
+                requireContext(),
+                Uri.parse("https://covid-relief.letsbethechange.in/")
+            )
+        }
     }
 
     override fun onStart() {

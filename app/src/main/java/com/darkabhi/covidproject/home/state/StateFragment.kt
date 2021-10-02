@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -12,12 +13,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.darkabhi.covidproject.R
 import com.darkabhi.covidproject.databinding.FragmentStateBinding
 import com.darkabhi.covidproject.home.HomeViewModel
+import com.darkabhi.covidproject.models.CovidIndiaModel
 import com.darkabhi.covidproject.models.DistrictData
 import com.darkabhi.covidproject.models.State
-import com.darkabhi.covidproject.models.Statewise
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import timber.log.Timber
+import www.sanju.motiontoast.MotionToast
 
 @Suppress("UNCHECKED_CAST")
 @AndroidEntryPoint
@@ -49,7 +51,16 @@ class StateFragment : Fragment() {
             viewModel.indiaResponse.collectLatest {
                 when (it) {
                     is State.Failed -> {
-                        Timber.e(it.message)
+                        binding.progressWheelCovid.visibility = View.GONE
+                        binding.activeCasesLayout.visibility = View.GONE
+                        MotionToast.darkToast(
+                            requireActivity(), "Failed ☹",
+                            "An error occurred while fetching latest data.",
+                            MotionToast.TOAST_ERROR,
+                            MotionToast.GRAVITY_BOTTOM,
+                            MotionToast.LONG_DURATION,
+                            ResourcesCompat.getFont(requireContext(), R.font.helvetica_regular)
+                        )
                     }
                     is State.Loading -> {
                         binding.progressWheelCovid.visibility = View.VISIBLE
@@ -60,7 +71,7 @@ class StateFragment : Fragment() {
                         binding.progressWheelCovid.visibility = View.GONE
                         binding.covidDetailsLayout.visibility = View.VISIBLE
                         binding.activeCasesLayout.visibility = View.VISIBLE
-                        binding.state = it.data as Statewise
+                        binding.state = it.data as CovidIndiaModel.Statewise
                     }
                     is State.Empty -> {
                     }
