@@ -8,7 +8,6 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.darkabhi.covidproject.R
 import com.darkabhi.covidproject.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint

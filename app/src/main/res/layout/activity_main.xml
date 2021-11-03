@@ -28,8 +28,7 @@
                     android:id="@+id/app_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentTop="true"
-                    app:titleTextAppearance="@style/ToolbarBarTextAppearance" />
+                    android:layout_alignParentTop="true" />
 
                 <fragment
                     android:id="@+id/fragment"
@@ -48,8 +47,6 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom"
-                app:itemIconTint="@color/bottom_nav_color_selector"
-                app:itemTextColor="@color/bottom_nav_color_selector"
                 app:labelVisibilityMode="labeled"
                 app:layout_behavior="com.darkabhi.covidproject.utils.ui.BottomNavigationBehavior"
                 app:menu="@menu/botttom_menu" />

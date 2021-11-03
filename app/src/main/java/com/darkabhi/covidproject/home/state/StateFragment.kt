@@ -52,7 +52,7 @@ class StateFragment : Fragment() {
                 when (it) {
                     is State.Failed -> {
                         binding.progressWheelCovid.visibility = View.GONE
-                        binding.activeCasesLayout.visibility = View.GONE
+                        binding.active.visibility = View.GONE
                         MotionToast.darkToast(
                             requireActivity(), "Failed ☹",
                             "An error occurred while fetching latest data.",
@@ -65,12 +65,12 @@ class StateFragment : Fragment() {
                     is State.Loading -> {
                         binding.progressWheelCovid.visibility = View.VISIBLE
                         binding.covidDetailsLayout.visibility = View.GONE
-                        binding.activeCasesLayout.visibility = View.GONE
+                        binding.active.visibility = View.GONE
                     }
                     is State.Success<*> -> {
                         binding.progressWheelCovid.visibility = View.GONE
                         binding.covidDetailsLayout.visibility = View.VISIBLE
-                        binding.activeCasesLayout.visibility = View.VISIBLE
+                        binding.active.visibility = View.VISIBLE
                         binding.state = it.data as CovidIndiaModel.Statewise
                     }
                     is State.Empty -> {

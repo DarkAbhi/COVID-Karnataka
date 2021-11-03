@@ -22,8 +22,7 @@
                 android:layout_marginTop="24dp"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/symptoms"
-                android:textColor="@color/text_color"
-                android:textSize="24sp" />
+                android:textAppearance="?attr/textAppearanceHeadlineSmall" />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -54,7 +53,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/high_fever"
-                            android:textColor="@color/text_color" />
+                            android:textAppearance="?attr/textAppearanceBodyMedium" />
 
                     </LinearLayout>
 
@@ -76,7 +75,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/cough"
-                            android:textColor="@color/text_color" />
+                            android:textAppearance="?attr/textAppearanceBodyMedium" />
 
                     </LinearLayout>
 
@@ -98,7 +97,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:text="@string/sore_throat"
-                            android:textColor="@color/text_color" />
+                            android:textAppearance="?attr/textAppearanceBodyMedium" />
 
                     </LinearLayout>
 
@@ -113,8 +112,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/montserrat"
                 android:text="@string/prevention"
-                android:textColor="@color/text_color"
-                android:textSize="24sp" />
+                android:textAppearance="?attr/textAppearanceHeadlineSmall" />
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -143,7 +141,7 @@
                             android:layout_gravity="center"
                             android:text="@string/wash_your_nhands_often"
                             android:textAlignment="center"
-                            android:textColor="@color/text_color" />
+                            android:textAppearance="?attr/textAppearanceBodyMedium" />
 
                     </LinearLayout>
 
@@ -164,7 +162,7 @@
                             android:layout_gravity="center"
                             android:text="@string/wear_a_face_nmask"
                             android:textAlignment="center"
-                            android:textColor="@color/text_color" />
+                            android:textAppearance="?attr/textAppearanceBodyMedium" />
 
                     </LinearLayout>
 
@@ -185,7 +183,7 @@
                             android:layout_gravity="center"
                             android:text="@string/avoid_contact_nwith_sick_people"
                             android:textAlignment="center"
-                            android:textColor="@color/text_color" />
+                            android:textAppearance="?attr/textAppearanceBodyMedium" />
 
                     </LinearLayout>
 
@@ -206,7 +204,7 @@
                             android:layout_gravity="center"
                             android:text="@string/always_cover_your_ncough_or_sneeze"
                             android:textAlignment="center"
-                            android:textColor="@color/text_color" />
+                            android:textAppearance="?attr/textAppearanceBodyMedium" />
 
                     </LinearLayout>
 

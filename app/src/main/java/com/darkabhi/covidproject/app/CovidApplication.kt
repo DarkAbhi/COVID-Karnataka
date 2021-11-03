@@ -4,6 +4,7 @@ import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import com.darkabhi.covidproject.BuildConfig
 import com.darkabhi.covidproject.app.preferences.Manager
+import com.google.android.material.color.DynamicColors
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
@@ -14,6 +15,7 @@ import timber.log.Timber
 class CovidApplication : Application() {
     override fun onCreate() {
         super.onCreate()
+        DynamicColors.applyToActivitiesIfAvailable(this)
         if (BuildConfig.DEBUG) Timber.plant(Timber.DebugTree())
         if (Manager(this).isDarkTheme())
             AppCompatDelegate.setDefaultNightMode(

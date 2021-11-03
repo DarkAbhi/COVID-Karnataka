@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3977E3</color>
-    <color name="colorPrimaryDark">#1A2744</color>
-    <color name="colorAccent">#7CA7DC</color>
 
-    <color name="nav_bar_inactive_color">#F0F8FF</color>
     <color name="text_color">#ffffff</color>
-    <color name="districtCardTextColor">#ffffff</color>
-
-    <color name="verified_chip_bg">#228B22</color>
-    <color name="not_verified_chip_bg">#FF0000</color>
-    <color name="to_be_verified_chip_bg">#fada5f</color>
-
-    <color name="available_chip_bg">#3977E3</color>
 
     <color name="call_button_bg">#303030</color>
 

@@ -11,6 +11,7 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
+        style="?attr/materialCardViewElevatedStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -26,24 +27,26 @@
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/verify_status_chip"
+                style="@style/Widget.Material3.Chip.Suggestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:textColor="@android:color/white"
+                android:checked="true"
+                android:clickable="false"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:verifiedChipText="@{details.verified}"
-                app:verifiedColor="@{details.verified}"
                 tools:text="Verified" />
 
             <com.google.android.material.chip.Chip
                 android:id="@+id/available_status_chip"
+                style="@style/Widget.Material3.Chip.Suggestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
-                android:textColor="@android:color/white"
+                android:checked="true"
+                android:clickable="false"
                 app:availableChipText="@{details.available}"
-                app:availableColor="@{details.available}"
                 app:layout_constraintStart_toEndOf="@id/verify_status_chip"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Verified" />
@@ -54,7 +57,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="@{details.name}"
-                android:textColor="@color/text_color"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
                 app:layout_constraintEnd_toStartOf="@+id/phone_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/verify_status_chip"
@@ -66,9 +69,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="@{details.contactNumber}"
-                android:textColor="@color/text_color"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textIsSelectable="true"
-                android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name"
                 tools:text="08026710777" />
@@ -79,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="@{details.description}"
-                android:textColor="@color/text_color"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
                 app:layout_constraintEnd_toStartOf="@+id/phone_button"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/number"
@@ -90,8 +92,7 @@
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginEnd="4dp"
-                android:background="@drawable/button_background_shadow"
-                android:elevation="4dp"
+                android:background="?selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_phone"
                 app:layout_constraintBottom_toBottomOf="@+id/description"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -102,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="4dp"
                 android:layout_marginBottom="4dp"
-                android:textColor="@android:color/darker_gray"
+                android:textAppearance="?attr/textAppearanceLabelSmall"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/description"
                 app:setLastUpdatedTime="@{details.lastUpdateTime}"

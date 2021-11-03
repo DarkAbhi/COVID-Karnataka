@@ -22,23 +22,13 @@ fun setPostImage(postImageView: ImageView?, url: String?) {
         crossfade(500)
         error(R.drawable.placeholder)
         placeholder(R.drawable.placeholder)
+        fallback(R.drawable.placeholder)
     }
 }
 
 @BindingAdapter("dashboardImage")
 fun setDashboardImage(imageView: ImageView, value: Int) {
     imageView.setImageResource(value)
-}
-
-@BindingAdapter("verifiedColor")
-fun setVerificationChipColor(chip: Chip, value: String) {
-    when (value) {
-        "0" -> chip.setChipBackgroundColorResource(R.color.verified_chip_bg)
-        "1" -> chip.setChipBackgroundColorResource(
-            R.color.not_verified_chip_bg
-        )
-        else -> chip.setChipBackgroundColorResource(R.color.to_be_verified_chip_bg)
-    }
 }
 
 @BindingAdapter("verifiedChipText")
@@ -50,13 +40,6 @@ fun setVerificationChipText(chip: Chip, value: String) {
             R.string.to_be_verified
         )
     }
-}
-
-@BindingAdapter("availableColor")
-fun setAvailableChipColor(chip: Chip, value: Boolean) {
-    if (value) chip.setChipBackgroundColorResource(R.color.available_chip_bg) else chip.setChipBackgroundColorResource(
-        android.R.color.darker_gray
-    )
 }
 
 @BindingAdapter("availableChipText")
