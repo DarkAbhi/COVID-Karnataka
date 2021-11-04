@@ -20,7 +20,7 @@ class InfoFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_info, container, false)
 
         with(binding) {
-            lifecycleOwner = this@InfoFragment
+            lifecycleOwner = viewLifecycleOwner
         }
         return binding.root
     }

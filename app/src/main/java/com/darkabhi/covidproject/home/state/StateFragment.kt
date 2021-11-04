@@ -37,7 +37,7 @@ class StateFragment : Fragment() {
 
         with(binding) {
             vm = viewModel
-            lifecycleOwner = this@StateFragment
+            lifecycleOwner = viewLifecycleOwner
         }
 
         mAdapter = DistrictAdapter()

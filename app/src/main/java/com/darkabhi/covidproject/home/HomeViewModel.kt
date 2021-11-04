@@ -8,6 +8,7 @@ import com.darkabhi.covidproject.home.data.network.repository.NewsRepositoryImpl
 import com.darkabhi.covidproject.models.ResultWrapper
 import com.darkabhi.covidproject.models.State
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
@@ -37,7 +38,7 @@ class HomeViewModel @Inject constructor(
         getNews()
     }
 
-    private fun getIndiaDetails() = viewModelScope.launch {
+    private fun getIndiaDetails() = viewModelScope.launch(Dispatchers.IO) {
         _indiaResponse.value = State.Loading
         when (val response = covidRepositoryImpl.getIndiaData()) {
             is ResultWrapper.GenericError -> {
@@ -52,7 +53,7 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    private fun getStateDetails() = viewModelScope.launch {
+    private fun getStateDetails() = viewModelScope.launch(Dispatchers.IO) {
         _stateResponse.value = State.Loading
         when (val response = covidRepositoryImpl.getStateData()) {
             is ResultWrapper.GenericError -> {
@@ -70,7 +71,7 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    private fun getNews() = viewModelScope.launch {
+    private fun getNews() = viewModelScope.launch(Dispatchers.IO) {
         _newsResponse.value = State.Loading
         when (val response = newsRepositoryImpl.getNews("in", "health", AppConfig.NEWS_API_KEY)) {
             is ResultWrapper.GenericError -> {

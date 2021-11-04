@@ -35,7 +35,7 @@ class NewsFragment : Fragment() {
 
         with(binding) {
             vm = viewModel
-            lifecycleOwner = this@NewsFragment
+            lifecycleOwner = viewLifecycleOwner
         }
 
         mAdapter = NewsAdapter()

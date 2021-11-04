@@ -27,7 +27,7 @@ class CovidResourcesFragment : Fragment() {
             DataBindingUtil.inflate(inflater, R.layout.covid_resources_fragment, container, false)
 
         with(binding) {
-            lifecycleOwner = this@CovidResourcesFragment
+            lifecycleOwner = viewLifecycleOwner
         }
 
         mAdapter = DashboardAdapter {

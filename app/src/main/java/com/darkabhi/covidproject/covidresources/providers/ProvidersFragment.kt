@@ -52,7 +52,7 @@ class ProvidersFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.providers_fragment, container, false)
 
         with(binding) {
-            lifecycleOwner = this@ProvidersFragment
+            lifecycleOwner = viewLifecycleOwner
         }
 
         mAdapter = ResourcesAdapter {

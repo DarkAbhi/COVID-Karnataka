@@ -22,7 +22,7 @@ class AboutFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_about, container, false)
         with(binding) {
-            lifecycleOwner = this@AboutFragment
+            lifecycleOwner = viewLifecycleOwner
         }
         return binding.root
     }

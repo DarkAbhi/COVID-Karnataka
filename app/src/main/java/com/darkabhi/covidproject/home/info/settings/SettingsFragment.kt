@@ -26,7 +26,7 @@ class SettingsFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_settings, container, false)
 
         with(binding) {
-            lifecycleOwner = this@SettingsFragment
+            lifecycleOwner = viewLifecycleOwner
         }
 
         binding.themeSwitch.isChecked = Manager(requireContext()).isDarkTheme()
