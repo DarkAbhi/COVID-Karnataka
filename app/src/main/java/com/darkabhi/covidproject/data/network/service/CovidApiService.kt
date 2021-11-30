@@ -1,7 +1,7 @@
 package com.darkabhi.covidproject.data.network.service
 
-import com.darkabhi.covidproject.models.CovidIndiaModel
-import com.darkabhi.covidproject.models.CovidStateModelItem
+import com.darkabhi.covidproject.home.state.models.CovidIndiaModel
+import com.darkabhi.covidproject.home.state.models.CovidStateModelItem
 import retrofit2.http.GET
 
 /**

@@ -7,7 +7,7 @@
 
         <variable
             name="article"
-            type="com.darkabhi.covidproject.models.Article" />
+            type="com.darkabhi.covidproject.home.news.models.Article" />
     </data>
 
     <com.google.android.material.card.MaterialCardView

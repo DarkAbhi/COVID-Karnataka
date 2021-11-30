@@ -2,53 +2,51 @@ package com.darkabhi.covidproject.home.state
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.darkabhi.covidproject.R
+import com.darkabhi.covidproject.data.room.models.DistrictDetail
 import com.darkabhi.covidproject.databinding.DistrictCardBinding
-import com.darkabhi.covidproject.models.DistrictData
 
 /**
  * Created by Abhishek AN <abhishek@iku.earth> on 4/25/2021.
  */
-class DistrictAdapter : RecyclerView.Adapter<DistrictAdapter.DistrictViewHolder>() {
-
-    private var items = listOf<DistrictData>()
+class DistrictAdapter :
+    ListAdapter<DistrictDetail, DistrictAdapter.DistrictViewHolder>(DistrictComparator()) {
 
     inner class DistrictViewHolder(private val binding: DistrictCardBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: DistrictData) {
-            binding.district = item
-            binding.executePendingBindings()
+        fun bind(item: DistrictDetail) {
+            binding.districtLocation.text = item.district
+            binding.districtActive.text =
+                binding.root.context.getString(R.string.active, item.active)
+            binding.districtConfirmed.text =
+                binding.root.context.getString(R.string.confirmed, item.confirmed)
+            binding.districtDeceased.text =
+                binding.root.context.getString(R.string.deceased, item.deceased)
+            binding.districtRecovered.text =
+                binding.root.context.getString(R.string.recovered, item.recovered)
         }
     }
 
-    companion object : DiffUtil.ItemCallback<DistrictData>() {
-        override fun areItemsTheSame(oldItem: DistrictData, newItem: DistrictData): Boolean =
-            oldItem === newItem
+    class DistrictComparator : DiffUtil.ItemCallback<DistrictDetail>() {
+        override fun areItemsTheSame(oldItem: DistrictDetail, newItem: DistrictDetail): Boolean =
+            oldItem.district === newItem.district
 
-        override fun areContentsTheSame(oldItem: DistrictData, newItem: DistrictData): Boolean =
-            oldItem.district == newItem.district
+        override fun areContentsTheSame(oldItem: DistrictDetail, newItem: DistrictDetail): Boolean =
+            oldItem == newItem
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DistrictViewHolder {
-        val binding: DistrictCardBinding = DataBindingUtil.inflate(
-            LayoutInflater.from(parent.context),
-            R.layout.district_card,
-            parent,
-            false
-        )
+        val binding =
+            DistrictCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return DistrictViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: DistrictViewHolder, position: Int) =
-        holder.bind(items[position])
-
-    override fun getItemCount(): Int = items.size
-
-    fun submitList(items: List<DistrictData>) {
-        this.items = items
-        notifyDataSetChanged()
+    override fun onBindViewHolder(holder: DistrictViewHolder, position: Int) {
+        val currentItem = getItem(position)
+        if (currentItem != null)
+            holder.bind(currentItem)
     }
 }

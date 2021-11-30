@@ -1,6 +1,6 @@
 package com.darkabhi.covidproject.home.data.network.repository
 
-import com.darkabhi.covidproject.models.NewsModel
+import com.darkabhi.covidproject.home.news.models.NewsModel
 import com.darkabhi.covidproject.models.ResultWrapper
 
 /**

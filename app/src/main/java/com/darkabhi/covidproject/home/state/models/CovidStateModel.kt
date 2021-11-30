@@ -1,5 +1,6 @@
-package com.darkabhi.covidproject.models
+package com.darkabhi.covidproject.home.state.models
 
+import com.darkabhi.covidproject.data.room.models.DistrictDetail
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
@@ -14,16 +15,6 @@ data class CovidStateModelItem(
 )
 
 @JsonClass(generateAdapter = true)
-data class Delta(
-    @Json(name = "confirmed")
-    val confirmed: Int,
-    @Json(name = "deceased")
-    val deceased: Int,
-    @Json(name = "recovered")
-    val recovered: Int
-)
-
-@JsonClass(generateAdapter = true)
 data class DistrictData(
     @Json(name = "active")
     val active: Int,
@@ -31,14 +22,20 @@ data class DistrictData(
     val confirmed: Int,
     @Json(name = "deceased")
     val deceased: Int,
-    @Json(name = "delta")
-    val delta: Delta,
     @Json(name = "district")
     val district: String,
-    @Json(name = "migratedother")
-    val migratedother: Int,
-    @Json(name = "notes")
-    val notes: String,
     @Json(name = "recovered")
     val recovered: Int
 )
+
+fun DistrictData.toDistrictDetail(state: CovidStateModelItem): DistrictDetail {
+    return DistrictDetail(
+        state = state.state,
+        stateCode = state.statecode,
+        active = active,
+        confirmed = confirmed,
+        deceased = deceased,
+        district = district,
+        recovered = recovered
+    )
+}

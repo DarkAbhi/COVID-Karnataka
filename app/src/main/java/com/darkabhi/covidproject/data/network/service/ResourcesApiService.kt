@@ -1,6 +1,6 @@
 package com.darkabhi.covidproject.data.network.service
 
-import com.darkabhi.covidproject.models.ResourceModel
+import com.darkabhi.covidproject.covidresources.providers.models.ResourceModel
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

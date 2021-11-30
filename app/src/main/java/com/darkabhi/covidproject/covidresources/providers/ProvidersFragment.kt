@@ -18,8 +18,8 @@ import androidx.paging.LoadState
 import com.darkabhi.covidproject.R
 import com.darkabhi.covidproject.covidresources.adapter.LoadingStateAdapter
 import com.darkabhi.covidproject.covidresources.adapter.ResourcesAdapter
+import com.darkabhi.covidproject.covidresources.dashboard.models.DashboardItemModel
 import com.darkabhi.covidproject.databinding.ProvidersFragmentBinding
-import com.darkabhi.covidproject.models.DashboardItemModel
 import com.darkabhi.covidproject.utils.PermissionUtils.checkPhonePermission
 import com.darkabhi.covidproject.utils.showShortSnackBar
 import dagger.hilt.android.AndroidEntryPoint

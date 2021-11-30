@@ -1,4 +1,4 @@
-package com.darkabhi.covidproject.models
+package com.darkabhi.covidproject.covidresources.dashboard.models
 
 import java.io.Serializable
 

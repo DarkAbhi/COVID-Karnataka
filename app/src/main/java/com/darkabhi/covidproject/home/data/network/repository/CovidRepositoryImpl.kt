@@ -1,25 +1,58 @@
 package com.darkabhi.covidproject.home.data.network.repository
 
-import com.darkabhi.covidproject.data.network.helper.safeApiCall
+import androidx.room.withTransaction
+import com.darkabhi.covidproject.data.network.helper.networkBoundResource
 import com.darkabhi.covidproject.data.network.service.CovidApiService
-import com.darkabhi.covidproject.models.CovidIndiaModel
-import com.darkabhi.covidproject.models.CovidStateModelItem
-import com.darkabhi.covidproject.models.ResultWrapper
-import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.Dispatchers
+import com.darkabhi.covidproject.data.room.CovidAppDatabase
+import com.darkabhi.covidproject.home.state.data.local.dao.DistrictDetailsDao
+import com.darkabhi.covidproject.home.state.data.local.dao.StateDetailDao
+import com.darkabhi.covidproject.home.state.models.toDistrictDetail
+import com.darkabhi.covidproject.home.state.models.toStateDetail
+import javax.inject.Inject
 
 /**
  * Created by Abhishek AN <abhishek@iku.earth> on 6/1/2021.
  */
-class CovidRepositoryImpl(
+class CovidRepositoryImpl @Inject constructor(
     private val covidApiService: CovidApiService,
-    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
-) : CovidRepository {
-    override suspend fun getIndiaData(): ResultWrapper<CovidIndiaModel> {
-        return safeApiCall(dispatcher) { covidApiService.getIndiaData() }
-    }
+    private val districtDetailsDao: DistrictDetailsDao,
+    private val stateDetailDao: StateDetailDao,
+    private val covidAppDatabase: CovidAppDatabase,
+) {
 
-    override suspend fun getStateData(): ResultWrapper<List<CovidStateModelItem>> {
-        return safeApiCall(dispatcher) { covidApiService.getStateDistrictData() }
-    }
+    fun getStateDetail(stateCode: String) = networkBoundResource(
+        query = {
+            stateDetailDao.getStateDetail(stateCode = stateCode)
+        },
+        fetch = {
+            covidApiService.getIndiaData().statewise.map {
+                it.toStateDetail()
+            }
+        },
+        saveFetchResult = {
+            covidAppDatabase.withTransaction {
+                stateDetailDao.clearStateDetails()
+                stateDetailDao.insertStates(it)
+            }
+        }
+    )
+
+    fun getDistrictDetails(stateCode: String) = networkBoundResource(
+        query = {
+            districtDetailsDao.getDistrictDetails(stateCode = stateCode)
+        },
+        fetch = {
+            covidApiService.getStateDistrictData().flatMap {
+                it.districtData.map { district ->
+                    district.toDistrictDetail(it)
+                }
+            }
+        },
+        saveFetchResult = {
+            covidAppDatabase.withTransaction {
+                districtDetailsDao.clearDistrictDetails()
+                districtDetailsDao.insertDistricts(it)
+            }
+        }
+    )
 }

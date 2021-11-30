@@ -5,8 +5,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.darkabhi.covidproject.R
+import com.darkabhi.covidproject.covidresources.dashboard.models.DashboardItemModel
 import com.darkabhi.covidproject.databinding.DashboardGridItemBinding
-import com.darkabhi.covidproject.models.DashboardItemModel
 
 /**
  * Created by Abhishek AN <abhishek@iku.earth> on 4/28/2021.

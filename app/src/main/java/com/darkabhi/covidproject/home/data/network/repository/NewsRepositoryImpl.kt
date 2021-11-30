@@ -2,7 +2,7 @@ package com.darkabhi.covidproject.home.data.network.repository
 
 import com.darkabhi.covidproject.data.network.helper.safeApiCall
 import com.darkabhi.covidproject.data.network.service.NewsApiService
-import com.darkabhi.covidproject.models.NewsModel
+import com.darkabhi.covidproject.home.news.models.NewsModel
 import com.darkabhi.covidproject.models.ResultWrapper
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

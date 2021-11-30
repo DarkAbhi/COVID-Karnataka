@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.darkabhi.covidproject.R
 import com.darkabhi.covidproject.databinding.NewsCardBinding
 import com.darkabhi.covidproject.home.news.NewsAdapter.NewsHolder
-import com.darkabhi.covidproject.models.Article
+import com.darkabhi.covidproject.home.news.models.Article
 
 class NewsAdapter : RecyclerView.Adapter<NewsHolder>() {
 

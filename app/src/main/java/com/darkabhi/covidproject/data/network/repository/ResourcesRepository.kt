@@ -1,7 +1,7 @@
 package com.darkabhi.covidproject.data.network.repository
 
+import com.darkabhi.covidproject.covidresources.providers.models.ResourceModel
 import com.darkabhi.covidproject.data.network.service.ResourcesApiService
-import com.darkabhi.covidproject.models.ResourceModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.Response

@@ -1,8 +1,6 @@
 package com.darkabhi.covidproject.di
 
-import com.darkabhi.covidproject.data.network.service.CovidApiService
 import com.darkabhi.covidproject.data.network.service.NewsApiService
-import com.darkabhi.covidproject.home.data.network.repository.CovidRepositoryImpl
 import com.darkabhi.covidproject.home.data.network.repository.NewsRepositoryImpl
 import dagger.Module
 import dagger.Provides
@@ -16,10 +14,6 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object HomeModule {
-    @Provides
-    @Singleton
-    fun provideCovidRepository(covidApiService: CovidApiService) =
-        CovidRepositoryImpl(covidApiService)
 
     @Provides
     @Singleton

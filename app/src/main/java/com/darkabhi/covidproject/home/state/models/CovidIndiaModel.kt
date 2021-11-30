@@ -1,18 +1,19 @@
-package com.darkabhi.covidproject.models
+package com.darkabhi.covidproject.home.state.models
 
+import com.darkabhi.covidproject.data.room.models.StateDetail
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class CovidIndiaModel(
-    @Json(name = "cases_time_series")
-    val casesTimeSeries: List<CasesTimeSery>,
+    /*@Json(name = "cases_time_series")
+    val casesTimeSeries: List<CasesTimeSery>,*/
     @Json(name = "statewise")
     val statewise: List<Statewise>,
-    @Json(name = "tested")
-    val tested: List<Tested>
+    /*@Json(name = "tested")
+    val tested: List<Tested>*/
 ) {
-    @JsonClass(generateAdapter = true)
+    /*@JsonClass(generateAdapter = true)
     data class CasesTimeSery(
         @Json(name = "dailyconfirmed")
         val dailyconfirmed: String,
@@ -30,7 +31,7 @@ data class CovidIndiaModel(
         val totaldeceased: String,
         @Json(name = "totalrecovered")
         val totalrecovered: String
-    )
+    )*/
 
     @JsonClass(generateAdapter = true)
     data class Statewise(
@@ -60,7 +61,7 @@ data class CovidIndiaModel(
         val statenotes: String
     )
 
-    @JsonClass(generateAdapter = true)
+    /*@JsonClass(generateAdapter = true)
     data class Tested(
         @Json(name = "dailyrtpcrsamplescollectedicmrapplication")
         val dailyrtpcrsamplescollectedicmrapplication: String,
@@ -144,5 +145,16 @@ data class CovidIndiaModel(
         val years1stdose: String,
         @Json(name = "years2nddose")
         val years2nddose: String
+    )*/
+}
+
+fun CovidIndiaModel.Statewise.toStateDetail(): StateDetail {
+    return StateDetail(
+        state = state,
+        stateCode = statecode,
+        active = active,
+        confirmed = confirmed,
+        deceased = deaths,
+        recovered = recovered
     )
 }

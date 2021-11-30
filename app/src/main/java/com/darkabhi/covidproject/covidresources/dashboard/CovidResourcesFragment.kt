@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.darkabhi.covidproject.R
+import com.darkabhi.covidproject.covidresources.dashboard.models.DashboardItemModel
 import com.darkabhi.covidproject.databinding.CovidResourcesFragmentBinding
-import com.darkabhi.covidproject.models.DashboardItemModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

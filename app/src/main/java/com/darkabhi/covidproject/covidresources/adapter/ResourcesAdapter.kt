@@ -7,8 +7,8 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.darkabhi.covidproject.R
+import com.darkabhi.covidproject.covidresources.providers.models.ResourceData
 import com.darkabhi.covidproject.databinding.ProviderItemBinding
-import com.darkabhi.covidproject.models.ResourceData
 
 /**
  * Created by Abhishek AN <abhishek@iku.earth> on 4/29/2021.

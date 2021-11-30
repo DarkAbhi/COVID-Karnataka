@@ -3,8 +3,8 @@ package com.darkabhi.covidproject.data.network.datasource
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.darkabhi.covidproject.app.AppConfig
+import com.darkabhi.covidproject.covidresources.providers.models.ResourceData
 import com.darkabhi.covidproject.data.network.repository.ResourcesRepository
-import com.darkabhi.covidproject.models.ResourceData
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.ResponseBody.Companion.toResponseBody
 import retrofit2.HttpException

@@ -1,4 +1,4 @@
-package com.darkabhi.covidproject.models
+package com.darkabhi.covidproject.covidresources.providers.models
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

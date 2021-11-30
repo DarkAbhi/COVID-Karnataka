@@ -1,6 +1,6 @@
 package com.darkabhi.covidproject.data.network.service
 
-import com.darkabhi.covidproject.models.NewsModel
+import com.darkabhi.covidproject.home.news.models.NewsModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 

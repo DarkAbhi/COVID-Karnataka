@@ -7,7 +7,7 @@
 
         <variable
             name="dashboard_item"
-            type="com.darkabhi.covidproject.models.DashboardItemModel" />
+            type="com.darkabhi.covidproject.covidresources.dashboard.models.DashboardItemModel" />
     </data>
 
     <com.google.android.material.card.MaterialCardView
